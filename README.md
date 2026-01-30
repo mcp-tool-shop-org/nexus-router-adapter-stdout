@@ -1,3 +1,8 @@
+> ⚠️ **This repository has moved to [nexus-suite](https://github.com/mcp-tool-shop/nexus-suite)**
+> Source now lives at: `src/nexus-router-adapter-stdout/`
+
+---
+
 # nexus-router-adapter-stdout
 
 [![adapter-ci](https://github.com/mcp-tool-shop/nexus-router-adapter-stdout/actions/workflows/adapter-ci.yml/badge.svg)](https://github.com/mcp-tool-shop/nexus-router-adapter-stdout/actions/workflows/adapter-ci.yml)
