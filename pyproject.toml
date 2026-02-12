@@ -1,6 +1,6 @@
 [project]
 name = "nexus-router-adapter-stdout"
-version = "0.1.0"
+version = "0.1.1"
 description = "Debug adapter that prints tool calls to stdout"
 readme = "README.md"
 license = { text = "MIT" }
@@ -31,7 +31,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/mcp-tool-shop/nexus-router-adapter-stdout"
+Repository = "https://github.com/mcp-tool-shop-org/nexus-router-adapter-stdout"
 
 [build-system]
 requires = ["hatchling"]
