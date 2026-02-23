@@ -5,8 +5,6 @@ from __future__ import annotations
 import io
 import json
 
-import pytest
-
 from nexus_router_adapter_stdout import (
     ADAPTER_KIND,
     ADAPTER_MANIFEST,
@@ -106,7 +104,7 @@ class TestAdapterCall:
 
         adapter.call("my_tool", "run", {"x": 1})
 
-        assert "[test] my_tool.run\n" == output.getvalue()
+        assert output.getvalue() == "[test] my_tool.run\n"
 
     def test_call_includes_timestamp(self) -> None:
         """call() includes timestamp when enabled."""

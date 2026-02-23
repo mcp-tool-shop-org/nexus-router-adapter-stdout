@@ -1,13 +1,10 @@
-> ⚠️ **This repository has moved to [nexus-suite](https://github.com/mcp-tool-shop/nexus-suite)**
-> Source now lives at: `src/nexus-router-adapter-stdout/`
-
----
-
 # nexus-router-adapter-stdout
 
-[![adapter-ci](https://github.com/mcp-tool-shop/nexus-router-adapter-stdout/actions/workflows/adapter-ci.yml/badge.svg)](https://github.com/mcp-tool-shop/nexus-router-adapter-stdout/actions/workflows/adapter-ci.yml)
+[![CI](https://github.com/mcp-tool-shop-org/nexus-router-adapter-stdout/actions/workflows/ci.yml/badge.svg)](https://github.com/mcp-tool-shop-org/nexus-router-adapter-stdout/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/nexus-router-adapter-stdout)](https://pypi.org/project/nexus-router-adapter-stdout/)
+[![License: MIT](https://img.shields.io/github/license/mcp-tool-shop-org/nexus-router-adapter-stdout)](LICENSE)
 
-> Debug adapter that prints tool calls to stdout.
+Debug adapter that prints tool calls to stdout.
 
 Useful for:
 - Debugging pipelines
@@ -36,7 +33,7 @@ result = adapter.call("my_tool", "run", {"x": 1})
 # Output: [debug] 2024-01-01T00:00:00+00:00 my_tool.run {"x": 1}
 ```
 
-### JSON Output Mode
+### JSON output mode
 
 ```python
 adapter = load_adapter(
@@ -50,14 +47,14 @@ adapter.call("tool", "method", {"arg": "value"})
 
 ## Configuration
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `adapter_id` | string | No | `"stdout"` | Custom adapter ID |
-| `prefix` | string | No | `"[nexus]"` | Prefix for output lines |
-| `include_timestamp` | boolean | No | `true` | Include ISO timestamp |
-| `include_args` | boolean | No | `true` | Include args dict |
-| `json_output` | boolean | No | `false` | Output JSON format |
-| `return_echo` | boolean | No | `true` | Return call info in result |
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `adapter_id` | string | `"stdout"` | Custom adapter ID |
+| `prefix` | string | `"[nexus]"` | Prefix for output lines |
+| `include_timestamp` | boolean | `true` | Include ISO timestamp |
+| `include_args` | boolean | `true` | Include args dict |
+| `json_output` | boolean | `false` | Output JSON format |
+| `return_echo` | boolean | `true` | Return call info in result |
 
 ## Capabilities
 
@@ -67,19 +64,16 @@ adapter.call("tool", "method", {"arg": "value"})
 ## Development
 
 ```bash
-# Install dev dependencies
 pip install -e ".[dev]"
-
-# Run tests
 pytest -v
-
-# Lint
 ruff check .
-
-# Type check
-mypy src/
+mypy src/ --ignore-missing-imports
 ```
 
 ## License
 
 MIT
+
+---
+
+Built by [MCP Tool Shop](https://mcp-tool-shop.github.io/)

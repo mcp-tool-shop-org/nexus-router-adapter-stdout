@@ -10,22 +10,22 @@ from __future__ import annotations
 import json
 import sys
 from datetime import datetime, timezone
-from typing import Any, Dict, FrozenSet, Optional, TextIO
+from typing import Any, TextIO
 
 from nexus_router.dispatch import CAPABILITY_APPLY, CAPABILITY_DRY_RUN
 
 __all__ = [
+    "ADAPTER_KIND",
+    "ADAPTER_MANIFEST",
+    "DEFAULT_CAPABILITIES",
     "StdoutAdapter",
     "create_adapter",
-    "ADAPTER_KIND",
-    "DEFAULT_CAPABILITIES",
-    "ADAPTER_MANIFEST",
 ]
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 # Module-level metadata (per ADAPTER_SPEC.md)
 ADAPTER_KIND = "stdout"
-DEFAULT_CAPABILITIES: FrozenSet[str] = frozenset({CAPABILITY_DRY_RUN, CAPABILITY_APPLY})
+DEFAULT_CAPABILITIES: frozenset[str] = frozenset({CAPABILITY_DRY_RUN, CAPABILITY_APPLY})
 
 # Adapter manifest (v0.10+)
 ADAPTER_MANIFEST = {
@@ -84,13 +84,13 @@ class StdoutAdapter:
     def __init__(
         self,
         *,
-        adapter_id: Optional[str] = None,
+        adapter_id: str | None = None,
         prefix: str = "[nexus]",
         include_timestamp: bool = True,
         include_args: bool = True,
         json_output: bool = False,
         return_echo: bool = True,
-        output: Optional[TextIO] = None,
+        output: TextIO | None = None,
     ) -> None:
         """
         Create a stdout adapter.
@@ -124,11 +124,11 @@ class StdoutAdapter:
         return ADAPTER_KIND
 
     @property
-    def capabilities(self) -> FrozenSet[str]:
+    def capabilities(self) -> frozenset[str]:
         """Declared capabilities: dry_run, apply."""
         return self._capabilities
 
-    def call(self, tool: str, method: str, args: Dict[str, Any]) -> Dict[str, Any]:
+    def call(self, tool: str, method: str, args: dict[str, Any]) -> dict[str, Any]:
         """
         Print tool call to stdout and return echo.
 
@@ -144,7 +144,7 @@ class StdoutAdapter:
 
         if self._json_output:
             # JSON output mode
-            output_data: Dict[str, Any] = {
+            output_data: dict[str, Any] = {
                 "tool": tool,
                 "method": method,
             }
@@ -184,7 +184,7 @@ class StdoutAdapter:
 
 def create_adapter(
     *,
-    adapter_id: Optional[str] = None,
+    adapter_id: str | None = None,
     prefix: str = "[nexus]",
     include_timestamp: bool = True,
     include_args: bool = True,
