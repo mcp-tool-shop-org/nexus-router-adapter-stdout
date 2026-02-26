@@ -1,6 +1,6 @@
 [project]
 name = "nexus-router-adapter-stdout"
-version = "0.2.0"
+version = "0.2.1"
 description = "Debug adapter that prints tool calls to stdout"
 readme = "README.md"
 license = { text = "MIT" }
