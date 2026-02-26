@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.md">English</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
@@ -13,21 +13,21 @@
   <a href="https://mcp-tool-shop-org.github.io/nexus-router-adapter-stdout/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
 
-Debug adapter that prints tool calls to stdout.
+デバッグアダプターで、ツールの呼び出しを標準出力に出力します。
 
-Useful for:
-- Debugging pipelines
-- Testing router configuration
-- Understanding what calls are being made
-- Logging tool invocations
+用途：
+- パイプラインのデバッグ
+- ルーターの設定テスト
+- どのような呼び出しが行われているかの理解
+- ツールの実行ログ記録
 
-## Installation
+## インストール
 
 ```bash
 pip install nexus-router-adapter-stdout
 ```
 
-## Usage
+## 使用方法
 
 ```python
 from nexus_router.plugins import load_adapter
@@ -42,7 +42,7 @@ result = adapter.call("my_tool", "run", {"x": 1})
 # Output: [debug] 2024-01-01T00:00:00+00:00 my_tool.run {"x": 1}
 ```
 
-### JSON output mode
+### JSON出力モード
 
 ```python
 adapter = load_adapter(
@@ -54,23 +54,23 @@ adapter.call("tool", "method", {"arg": "value"})
 # Output: {"tool": "tool", "method": "method", "timestamp": "...", "args": {"arg": "value"}}
 ```
 
-## Configuration
+## 設定
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `adapter_id` | string | `"stdout"` | Custom adapter ID |
-| `prefix` | string | `"[nexus]"` | Prefix for output lines |
-| `include_timestamp` | boolean | `true` | Include ISO timestamp |
-| `include_args` | boolean | `true` | Include args dict |
-| `json_output` | boolean | `false` | Output JSON format |
-| `return_echo` | boolean | `true` | Return call info in result |
+| パラメータ | 型 | デフォルト値 | 説明 |
+| ----------- | ------ | --------- | ------------- |
+| `adapter_id` | string（文字列） | `"stdout"` | カスタムアダプターID |
+| `prefix` | string（文字列） | `"[nexus]"` | 出力行のプレフィックス |
+| `include_timestamp` | boolean（真偽値） | `true` | ISOタイムスタンプを含める |
+| `include_args` | boolean（真偽値） | `true` | 引数辞書を含める |
+| `json_output` | boolean（真偽値） | `false` | JSON形式で出力 |
+| `return_echo` | boolean（真偽値） | `true` | 結果に呼び出し情報を返す |
 
-## Capabilities
+## 機能
 
-- `dry_run` — Safe for simulation
-- `apply` — Can execute operations
+- `dry_run`：シミュレーションに安全
+- `apply`：操作を実行可能
 
-## Development
+## 開発
 
 ```bash
 pip install -e ".[dev]"
@@ -79,10 +79,10 @@ ruff check .
 mypy src/ --ignore-missing-imports
 ```
 
-## License
+## ライセンス
 
 MIT
 
 ---
 
-Built by [MCP Tool Shop](https://mcp-tool-shop.github.io/)
+[MCP Tool Shop](https://mcp-tool-shop.github.io/)によって作成されました。

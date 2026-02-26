@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.md">English</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
@@ -13,13 +13,13 @@
   <a href="https://mcp-tool-shop-org.github.io/nexus-router-adapter-stdout/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
 
-Debug adapter that prints tool calls to stdout.
+Adaptateur de débogage qui affiche les appels aux outils sur la sortie standard.
 
-Useful for:
-- Debugging pipelines
-- Testing router configuration
-- Understanding what calls are being made
-- Logging tool invocations
+Utile pour :
+- Le débogage des pipelines
+- Le test de la configuration du routeur
+- La compréhension des appels effectués
+- L'enregistrement des invocations des outils
 
 ## Installation
 
@@ -27,7 +27,7 @@ Useful for:
 pip install nexus-router-adapter-stdout
 ```
 
-## Usage
+## Utilisation
 
 ```python
 from nexus_router.plugins import load_adapter
@@ -42,7 +42,7 @@ result = adapter.call("my_tool", "run", {"x": 1})
 # Output: [debug] 2024-01-01T00:00:00+00:00 my_tool.run {"x": 1}
 ```
 
-### JSON output mode
+### Mode de sortie JSON
 
 ```python
 adapter = load_adapter(
@@ -56,21 +56,21 @@ adapter.call("tool", "method", {"arg": "value"})
 
 ## Configuration
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `adapter_id` | string | `"stdout"` | Custom adapter ID |
-| `prefix` | string | `"[nexus]"` | Prefix for output lines |
-| `include_timestamp` | boolean | `true` | Include ISO timestamp |
-| `include_args` | boolean | `true` | Include args dict |
-| `json_output` | boolean | `false` | Output JSON format |
-| `return_echo` | boolean | `true` | Return call info in result |
+| Paramètre | Type | Valeur par défaut | Description |
+| ----------- | ------ | --------- | ------------- |
+| `adapter_id` | chaîne de caractères | `"stdout"` | Identifiant de l'adaptateur personnalisé |
+| `prefix` | chaîne de caractères | `"[nexus]"` | Préfixe pour les lignes de sortie |
+| `include_timestamp` | booléen | `true` | Inclure l'horodatage ISO |
+| `include_args` | booléen | `true` | Inclure le dictionnaire des arguments |
+| `json_output` | booléen | `false` | Sortie au format JSON |
+| `return_echo` | booléen | `true` | Retourner les informations de l'appel dans le résultat |
 
-## Capabilities
+## Capacités
 
-- `dry_run` — Safe for simulation
-- `apply` — Can execute operations
+- `dry_run` — Sûr pour la simulation
+- `apply` — Peut exécuter des opérations
 
-## Development
+## Développement
 
 ```bash
 pip install -e ".[dev]"
@@ -79,10 +79,10 @@ ruff check .
 mypy src/ --ignore-missing-imports
 ```
 
-## License
+## Licence
 
 MIT
 
 ---
 
-Built by [MCP Tool Shop](https://mcp-tool-shop.github.io/)
+Créé par [MCP Tool Shop](https://mcp-tool-shop.github.io/)

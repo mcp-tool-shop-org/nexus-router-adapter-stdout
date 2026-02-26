@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.md">English</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
@@ -13,21 +13,21 @@
   <a href="https://mcp-tool-shop-org.github.io/nexus-router-adapter-stdout/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
 
-Debug adapter that prints tool calls to stdout.
+Adattatore di debug che stampa le chiamate degli strumenti sull'output standard.
 
-Useful for:
-- Debugging pipelines
-- Testing router configuration
-- Understanding what calls are being made
-- Logging tool invocations
+Utile per:
+- Debugging di pipeline
+- Test della configurazione del router
+- Comprendere quali chiamate vengono effettuate
+- Registrazione delle invocazioni degli strumenti
 
-## Installation
+## Installazione
 
 ```bash
 pip install nexus-router-adapter-stdout
 ```
 
-## Usage
+## Utilizzo
 
 ```python
 from nexus_router.plugins import load_adapter
@@ -42,7 +42,7 @@ result = adapter.call("my_tool", "run", {"x": 1})
 # Output: [debug] 2024-01-01T00:00:00+00:00 my_tool.run {"x": 1}
 ```
 
-### JSON output mode
+### Modalità di output JSON
 
 ```python
 adapter = load_adapter(
@@ -54,23 +54,23 @@ adapter.call("tool", "method", {"arg": "value"})
 # Output: {"tool": "tool", "method": "method", "timestamp": "...", "args": {"arg": "value"}}
 ```
 
-## Configuration
+## Configurazione
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `adapter_id` | string | `"stdout"` | Custom adapter ID |
-| `prefix` | string | `"[nexus]"` | Prefix for output lines |
-| `include_timestamp` | boolean | `true` | Include ISO timestamp |
-| `include_args` | boolean | `true` | Include args dict |
-| `json_output` | boolean | `false` | Output JSON format |
-| `return_echo` | boolean | `true` | Return call info in result |
+| Parametro | Tipo | Valore predefinito | Descrizione |
+| ----------- | ------ | --------- | ------------- |
+| `adapter_id` | string | `"stdout"` | ID dell'adattatore personalizzato |
+| `prefix` | string | `"[nexus]"` | Prefisso per le righe di output |
+| `include_timestamp` | boolean | `true` | Includi timestamp ISO |
+| `include_args` | boolean | `true` | Includi dizionario degli argomenti |
+| `json_output` | boolean | `false` | Output in formato JSON |
+| `return_echo` | boolean | `true` | Restituisci le informazioni sulla chiamata nel risultato |
 
-## Capabilities
+## Funzionalità
 
-- `dry_run` — Safe for simulation
-- `apply` — Can execute operations
+- `dry_run` — Sicuro per la simulazione
+- `apply` — Può eseguire operazioni
 
-## Development
+## Sviluppo
 
 ```bash
 pip install -e ".[dev]"
@@ -79,10 +79,10 @@ ruff check .
 mypy src/ --ignore-missing-imports
 ```
 
-## License
+## Licenza
 
 MIT
 
 ---
 
-Built by [MCP Tool Shop](https://mcp-tool-shop.github.io/)
+Creato da [MCP Tool Shop](https://mcp-tool-shop.github.io/)

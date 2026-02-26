@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.ja.md">日本語</a> | <a href="README.md">English</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
@@ -13,21 +13,21 @@
   <a href="https://mcp-tool-shop-org.github.io/nexus-router-adapter-stdout/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
 
-Debug adapter that prints tool calls to stdout.
+一个调试适配器，它会将工具调用打印到标准输出。
 
-Useful for:
-- Debugging pipelines
-- Testing router configuration
-- Understanding what calls are being made
-- Logging tool invocations
+用途：
+- 调试流水线
+- 测试路由器配置
+- 了解正在进行的调用
+- 记录工具的调用情况
 
-## Installation
+## 安装
 
 ```bash
 pip install nexus-router-adapter-stdout
 ```
 
-## Usage
+## 使用方法
 
 ```python
 from nexus_router.plugins import load_adapter
@@ -42,7 +42,7 @@ result = adapter.call("my_tool", "run", {"x": 1})
 # Output: [debug] 2024-01-01T00:00:00+00:00 my_tool.run {"x": 1}
 ```
 
-### JSON output mode
+### JSON 输出模式
 
 ```python
 adapter = load_adapter(
@@ -54,23 +54,23 @@ adapter.call("tool", "method", {"arg": "value"})
 # Output: {"tool": "tool", "method": "method", "timestamp": "...", "args": {"arg": "value"}}
 ```
 
-## Configuration
+## 配置
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `adapter_id` | string | `"stdout"` | Custom adapter ID |
-| `prefix` | string | `"[nexus]"` | Prefix for output lines |
-| `include_timestamp` | boolean | `true` | Include ISO timestamp |
-| `include_args` | boolean | `true` | Include args dict |
-| `json_output` | boolean | `false` | Output JSON format |
-| `return_echo` | boolean | `true` | Return call info in result |
+| 参数 | 类型 | 默认值 | 描述 |
+| ----------- | ------ | --------- | ------------- |
+| `adapter_id` | string | `"stdout"` | 自定义适配器 ID |
+| `prefix` | string | `"[nexus]"` | 输出行的前缀 |
+| `include_timestamp` | boolean | `true` | 包含 ISO 时间戳 |
+| `include_args` | boolean | `true` | 包含参数字典 |
+| `json_output` | boolean | `false` | 输出 JSON 格式 |
+| `return_echo` | boolean | `true` | 在结果中返回调用信息 |
 
-## Capabilities
+## 功能
 
-- `dry_run` — Safe for simulation
-- `apply` — Can execute operations
+- `dry_run` — 适用于模拟
+- `apply` — 可以执行操作
 
-## Development
+## 开发
 
 ```bash
 pip install -e ".[dev]"
@@ -79,10 +79,10 @@ ruff check .
 mypy src/ --ignore-missing-imports
 ```
 
-## License
+## 许可证
 
 MIT
 
 ---
 
-Built by [MCP Tool Shop](https://mcp-tool-shop.github.io/)
+由 [MCP Tool Shop](https://mcp-tool-shop.github.io/) 构建。
