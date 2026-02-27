@@ -1,6 +1,6 @@
 [project]
 name = "nexus-router-adapter-stdout"
-version = "0.2.1"
+version = "1.0.0"
 description = "Debug adapter that prints tool calls to stdout"
 readme = "README.md"
 license = { text = "MIT" }
@@ -8,7 +8,7 @@ authors = [
     { name = "mcp-tool-shop", email = "64996768+mcp-tool-shop@users.noreply.github.com" },
 ]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
