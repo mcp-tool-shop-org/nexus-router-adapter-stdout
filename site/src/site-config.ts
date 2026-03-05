@@ -14,7 +14,7 @@ export const config: SiteConfig = {
     headlineAccent: 'right in your terminal.',
     description: 'A zero-dependency debug adapter for Nexus Router that prints every tool invocation to stdout. Perfect for pipeline debugging, integration testing, and call logging.',
     primaryCta: { href: '#usage', label: 'Get started' },
-    secondaryCta: { href: '#features', label: 'Learn more' },
+    secondaryCta: { href: 'handbook/', label: 'Read the Handbook' },
     previews: [
       { label: 'Install', code: 'pip install nexus-router-adapter-stdout' },
       { label: 'Load', code: 'adapter = load_adapter(\n  "nexus_router_adapter_stdout:create_adapter"\n)' },
